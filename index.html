@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Books — Fetch + DOM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">asaxiy — demo</div>
+      <div style="flex:1"></div>
+      <input id="search" placeholder="Поиск..." />
+    </header>
+
+    <div class="controls">
+      <div class="select-wrap">
+        <label class="pill">
+          <select id="size">
+            <option value="12">12</option>
+            <option value="24" selected>24</option>
+            <option value="48">48</option>
+          </select>
+        </label>
+        <label class="pill">
+          <select id="order">
+            <option value="DESC">По убыванию</option>
+            <option value="ASC">По возрастанию</option>
+          </select>
+        </label>
+      </div>
+
+      <div style="flex:1"></div>
+      <div class="page-info" id="pageInfo">—</div>
+    </div>
+
+    <div id="grid" class="grid" aria-live="polite"></div>
+
+    <div id="loader" class="loader" style="display:none;">
+      <div class="skeleton" style="width:100%"></div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-top:12px;justify-content:center">
+      <button id="prevBtn" class="btn" style="width:120px;background:#e6eef6;color:#0a6fff">Назад</button>
+      <button id="nextBtn" class="btn" style="width:120px;background:#0a6fff">Вперед</button>
+    </div>
+  </div>
+
+  <div class="floating-filter" id="filterBtn">Фильтры</div>
+
+  <nav class="bottom-nav">
+    <div>Главная</div>
+    <div>Каталог</div>
+    <div>Корзина</div>
+    <div>Избранное</div>
+    <div>Профиль</div>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
